@@ -45,17 +45,17 @@ Load the required Docker images to Mesos slave nodes(ex: use `docker save` to cr
 You can make use of the `load-images.sh` helper script to transfer images to the Mesos slave nodes. It will search for any Docker images with `mesos` as a part of its name on your local machine, and ask for verification to transfer them to the Mesos slave nodes. `DCOS CLI` has to be functioning on your local machine in order for the script to retrieve the list of Mesos slave nodes. You can optionally provide a search pattern if you want to override the default `mesos` string.
 
     load-images.sh -u centos -p wso2is-km-mesos -k /home/ssh_key.pem
+    
     Usage
+    Usage: ./load-images.sh [OPTIONS]
 
-Usage: ./load-images.sh [OPTIONS]
+    Transfer Docker images to Mesos Nodes
+    Options:
 
-Transfer Docker images to Mesos Nodes
-Options:
-
-  -u	[OPTIONAL] Username to be used to connect to Mesos Nodes. If not provided, default "centos" is used.
-  -p	[OPTIONAL] Optional search pattern to search for Docker images. If not provided, default "mesos" is used.
-  -k	[OPTIONAL] Optional key file location. If not provided, key file will not be used.
-  -h	[OPTIONAL] Show help text.
+      -u	[OPTIONAL] Username to be used to connect to Mesos Nodes. If not provided, default "centos" is used.
+      -p	[OPTIONAL] Optional search pattern to search for Docker images. If not provided, default "mesos" is used.
+      -k	[OPTIONAL] Optional key file location. If not provided, key file will not be used.
+      -h	[OPTIONAL] Show help text.
 
 Ex: ./load-images.sh
 Ex: ./load-images.sh -u centos -p wso2is -k /home/ssh_key.pem
