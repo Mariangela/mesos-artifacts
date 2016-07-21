@@ -58,7 +58,7 @@ You can make use of the `load-images.sh` helper script to transfer images to the
     Ex: ./load-images.sh
     Ex: ./load-images.sh -u centos -p wso2is -k /home/ssh_key.pem
 
-##### Step 3 - Deploy WSO2 Product on Mesos DC/OS
+#### Step 3 - Deploy WSO2 Product on Mesos DC/OS
   1. Navigate to `wso2is-km` directory in mesos-artifacts repository; `MESOS_HOME/wso2is-km` location.
   2. run the deploy.sh script:
     
