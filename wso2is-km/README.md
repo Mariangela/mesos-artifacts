@@ -2,9 +2,7 @@
 
 These Mesos Artifacts provide the resources and instructions to deploy WSO2 Identity Server Key Manager on Mesos DC/OS.
 
-## Getting Started
-
-To deploy a WSO2 product on Mesos DC/OS, follow the below steps:
+Follow the instructions below to deploy a WSO2 product on Mesos DC/OS:
 
 - Build WSO2 Identity Server Key Manager Docker image using [WSO2 Dockerfiles](https://github.com/wso2/dockerfiles).
 - Load above Docker images to Mesos slave nodes or import them to a central Docker registry.
@@ -16,7 +14,7 @@ To deploy a WSO2 product on Mesos DC/OS, follow the below steps:
     - WSO2 Identity Server Key Manager Configuration Registry database container
     - WSO2 Identity Server Key Manager container
 
-#### 1. Build Docker Images
+#### Step 1 - Build Docker Images
 
 To manage configurations and artifacts when building Docker images, WSO2 recommends to use [`wso2/puppet-modules`](https://github.com/wso2/puppet-modules) as the provisioning method. A specific data set for Mesos platform is available in WSO2 Puppet Modules. It's possible to use this data set to build Dockerfiles for WSO2 Identity Server Key Manager for Mesos with minimum configuration changes.
 
@@ -38,7 +36,7 @@ Building WSO2 Identity Server Key Manager Docker images using Puppet for Mesos:
 
   This will build the default profile of WSO2 Identity Server Key Manager 5.1.0 for Mesos platform, using configuration specified in Puppet.
 
-#### 2. Load the Docker Images to Mesos slave nodes/ Import them to Central Docker Registry
+#### Step 2 - Load the Docker Images to Mesos slave nodes/ Import them to Central Docker Registry
 
 Load the required Docker images to Mesos slave nodes(ex: use `docker save` to create a tarball of the required image, `scp` the tarball to each node, and use `docker load` to reload the images from the copied tarballs on the nodes). Alternatively, if a private Docker registry is used, transfer the images there.
 
@@ -56,15 +54,10 @@ You can make use of the `load-images.sh` helper script to transfer images to the
       -p	[OPTIONAL] Optional search pattern to search for Docker images. If not provided, default "mesos" is used.
       -k	[OPTIONAL] Optional key file location. If not provided, key file will not be used.
       -h	[OPTIONAL] Show help text.
+    Ex: ./load-images.sh
+    Ex: ./load-images.sh -u centos -p wso2is -k /home/ssh_key.pem
 
-hiiii
-
-```
-Ex: ./load-images.sh
-Ex: ./load-images.sh -u centos -p wso2is -k /home/ssh_key.pem
-```
-
-##### 3. Deploy WSO2 Product on Mesos DC/OS
+##### Step 3 - Deploy WSO2 Product on Mesos DC/OS
   1. Navigate to `wso2is-km` directory in mesos-artifacts repository; `MESOS_HOME/wso2is-km` location.
   2. run the deploy.sh script:
 
@@ -72,11 +65,11 @@ Ex: ./load-images.sh -u centos -p wso2is -k /home/ssh_key.pem
 
       This will deploy the WSO2 Identity Server Key Manager 5.1.0 default profile in Mesos DC/OS, using the image available in Mesos slave nodes, and notify once the intended Marathon application `wso2is-km-default` starts running on the container.
 
-#### 4. Access Management Console
+#### Step 4 - Access Management Console
   1. Add a host entry (in Linux, using the `/etc/hosts` file) for Marathon LB Hostname `marathon-lb.marathon.mesos`, resolving to Marathon LB Host IP.
   2. Access the Carbon Management Console URL using `https://marathon-lb.marathon.mesos:10143/carbon/`
 
-#### 5. Undeploy WSO2 Product from Mesos DC/OS
+#### Step 5 - Undeploy WSO2 Product from Mesos DC/OS
   1. Navigate to `wso2is-km` directory in mesos-artifacts repository; `MESOS_HOME/wso2is-km` location.
   2. run the `undeploy.sh` script:
 
