@@ -44,7 +44,6 @@ You can make use of the `load-images.sh` helper script to transfer images to the
 
     load-images.sh -u centos -p wso2is-km-mesos -k /home/ssh_key.pem
     
-    Usage
     Usage: ./load-images.sh [OPTIONS]
 
     Transfer Docker images to Mesos Nodes
