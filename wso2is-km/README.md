@@ -82,9 +82,9 @@ You can make use of the `load-images.sh` helper script to transfer images to the
 
       This will undeploy the WSO2 Identity Server Key Manager specific DB(`mysql-is-db`), and product(`wso2is-km-default`)  Marathon applications. Additionally if `-f` flag is provided when running `undeploy.sh`, it will also undeploy the shared Governance DB, User DB and Marathon LB applications.
     
-      ```
-      ./undeploy.sh -f
-      ```
+    ```
+    ./undeploy.sh -f
+    ```
 
 For more detailed instructions on deploying WSO2 Identity Server Key Manager on Mesos DC/OS, please refer the wiki links under the Documentation section below.
 
