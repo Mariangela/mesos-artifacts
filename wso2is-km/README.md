@@ -61,10 +61,8 @@ You can make use of the `load-images.sh` helper script to transfer images to the
 ##### Step 3 - Deploy WSO2 Product on Mesos DC/OS
   1. Navigate to `wso2is-km` directory in mesos-artifacts repository; `MESOS_HOME/wso2is-km` location.
   2. run the deploy.sh script:
-
-    ```
+    
     ./deploy.sh
-    ```
 
       This will deploy the WSO2 Identity Server Key Manager 5.1.0 default profile in Mesos DC/OS, using the image available in Mesos slave nodes, and notify once the intended Marathon application `wso2is-km-default` starts running on the container.
 
