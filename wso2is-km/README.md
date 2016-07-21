@@ -30,7 +30,9 @@ Building WSO2 Identity Server Key Manager Docker images using Puppet for Mesos:
   8. Navigate to `wso2is-km` directory in the Dockerfiles repository; `DOCKERFILES_HOME/wso2is-km`.
   9. Build the Dockerfile with the following command:
 
-    **`./build.sh -v 5.1.0 -s mesos -r puppet`**
+    ```
+    ./build.sh -v 5.1.0 -s mesos -r puppet
+    ```
 
   Note that `-s mesos` flag denotes the Mesos platform, when it comes to selecting the configuration from Puppet.
 
@@ -60,7 +62,9 @@ You can make use of the `load-images.sh` helper script to transfer images to the
   1. Navigate to `wso2is-km` directory in mesos-artifacts repository; `MESOS_HOME/wso2is-km` location.
   2. run the deploy.sh script:
 
-    **`./deploy.sh`**
+    ```
+    ./deploy.sh
+    ```
 
       This will deploy the WSO2 Identity Server Key Manager 5.1.0 default profile in Mesos DC/OS, using the image available in Mesos slave nodes, and notify once the intended Marathon application `wso2is-km-default` starts running on the container.
 
