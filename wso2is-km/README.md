@@ -29,7 +29,7 @@ Building WSO2 Identity Server Key Manager Docker images using Puppet for Mesos:
   7. Set the environment variable `PUPPET_HOME` pointing to location of the puppet modules in local machine.
   8. Navigate to `wso2is-km` directory in the Dockerfiles repository; `DOCKERFILES_HOME/wso2is-km`.
   9. Build the Dockerfile with the following command:
-
+    
     ```
     ./build.sh -v 5.1.0 -s mesos -r puppet
     ```
