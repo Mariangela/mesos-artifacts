@@ -1,4 +1,4 @@
-# Mesos Artifacts for WSO2 Identity Server Key Manager
+## Mesos Artifacts for WSO2 Identity Server Key Manager
 
 These Mesos Artifacts provide the resources and instructions to deploy WSO2 Identity Server Key Manager on Mesos DC/OS.
 
